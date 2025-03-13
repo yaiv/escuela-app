@@ -1,19 +1,20 @@
-import React from 'react';
-import Layout from 'Layout';
-import { Typography } from '@mui/material';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Importación router
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import About from "./components/About";
 
-const App = () => {
+function App() {
   return (
-    <Layout>
-      {/* Este contenido se pasa como children a Layout */}
-      <Typography variant="h4" gutterBottom>
-        ¡Bienvenido a Mi Aplicación!
-      </Typography>
-      <Typography variant="body1">
-        Este es el contenido principal de la aplicación.
-      </Typography>
-    </Layout>
-  );
-};
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Layout>
+    </Router>
+  )
+}
 
 export default App;
