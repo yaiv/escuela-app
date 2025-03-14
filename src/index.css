@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.swiper-container {
+  width: 60%;
+  height: 60%;
+  color: red;
+}
