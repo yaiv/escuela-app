@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Drawer, List, ListItem, ListItemText, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom"; // Importamos Link
 
 const Sidebar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -19,14 +20,11 @@ const Sidebar = () => {
       </IconButton>
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
-          <ListItem button>
+          <ListItem button component={Link} to="/" onClick={toggleDrawer(false)}>
             <ListItemText primary="Inicio" />
           </ListItem>
-          <ListItem button>
-            <ListItemText primary="Sobre Nosotros" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="Contacto" />
+          <ListItem button component={Link} to="/about" onClick={toggleDrawer(false)}>
+            <ListItemText primary="Acerca de" />
           </ListItem>
         </List>
       </Drawer>
